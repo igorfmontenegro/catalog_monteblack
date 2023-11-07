@@ -60,7 +60,6 @@ const QuestionsCommon: Array<QuestionsProps> = [
 export interface ProductListProps {
   image: string
   name: string
-  condition?: string
   value: string
   card: string
   valueSecond?: string
@@ -146,7 +145,6 @@ export function Catalog() {
             key={index}
             image={productList.image}
             name={productList.name}
-            condition={productList.condition}
             value={productList.value}
             card={productList.card}
             valueSecond={productList.valueSecond}

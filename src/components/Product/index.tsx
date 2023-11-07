@@ -20,7 +20,6 @@ export function Product(props: ProductListProps) {
         <ProductDescription>
           <ProductName>
             {props.name} <br></br>
-            <span> {props.condition} </span>
           </ProductName>
           <h4> {props.value} </h4>
           <p> {props.card} </p>
