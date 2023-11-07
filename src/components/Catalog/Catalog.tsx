@@ -35,7 +35,7 @@ interface QuestionsProps {
   answer: string
 }
 
-export const QuestionsCommon: Array<QuestionsProps> = [
+const QuestionsCommon: Array<QuestionsProps> = [
   {
     question: 'Os aparelhos têm garantia?',
     answer:
@@ -67,7 +67,7 @@ export interface ProductListProps {
   cardSecond?: string
 }
 
-export const ProductList: Array<ProductListProps> = [
+const ProductList: Array<ProductListProps> = [
   {
     image: iPhone11,
     name: 'iPhone 11',
