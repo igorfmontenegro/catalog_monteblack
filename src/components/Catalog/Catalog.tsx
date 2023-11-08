@@ -15,7 +15,7 @@ import {
 
 import { QuestionButton } from '../QuestionButton/index'
 
-import Logo from '../../assets/logo.png'
+import Logo from '../../assets/Logo.png'
 import Memoji from '../../assets/memoji.png'
 import Cellphone from '../../assets/cellphones.png'
 import SmartWatch from '../../assets/smartwatch.png'
