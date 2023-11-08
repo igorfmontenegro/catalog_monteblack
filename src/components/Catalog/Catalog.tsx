@@ -26,7 +26,10 @@ import iPhone11 from '../../assets/iphone11.png'
 import iPhone12 from '../../assets/iphone12.png'
 import iPhone13 from '../../assets/iphone13.png'
 import iPhone14 from '../../assets/iphone14.png'
+import iPhone15 from '../../assets/iphone15.png'
 import iPhone14PMax from '../../assets/iphone14promax.png'
+import iPhone15P from '../../assets/iphone15pro.png'
+import iPhone15PMax from '../../assets/iphone15promax.png'
 
 import { Product } from '../Product'
 
@@ -70,8 +73,8 @@ const ProductList: Array<ProductListProps> = [
   {
     image: iPhone11,
     name: 'iPhone 11',
-    value: '64GB: R$2.750 à vista',
-    card: '12x de R$265 nos cartões',
+    value: '64GB: R$2.700 à vista',
+    card: '12x de R$260 nos cartões',
     valueSecond: '128GB: R$3.100 à vista',
     cardSecond: '12x de R$300 nos cartões'
   },
@@ -86,26 +89,50 @@ const ProductList: Array<ProductListProps> = [
   {
     image: iPhone13,
     name: 'iPhone 13',
-    value: '128GB: R$4.000 à vista',
-    card: '12x de R$390 nos cartões',
-    valueSecond: '256GB: R$4.800 à vista',
-    cardSecond: '12x de R$470 nos cartões'
+    value: '128GB: R$3.900 à vista',
+    card: '12x de R$380 nos cartões',
+    valueSecond: '256GB: R$4.700 à vista',
+    cardSecond: '12x de R$460 nos cartões'
   },
   {
     image: iPhone14,
     name: 'iPhone 14',
-    value: '128GB: R$4.500 à vista',
-    card: '12x de R$440 nos cartões',
+    value: '128GB: R$4.400 à vista',
+    card: '12x de R$430 nos cartões',
     valueSecond: '256GB: R$5.200 à vista',
     cardSecond: '12x de R$510 nos cartões'
   },
   {
+    image: iPhone15,
+    name: 'iPhone 15',
+    value: '128GB: R$5.700 à vista',
+    card: '12x de R$560 nos cartões',
+    valueSecond: '256GB: R$6.300 à vista',
+    cardSecond: '12x de R$620 nos cartões'
+  },
+  {
     image: iPhone14PMax,
     name: 'iPhone 14 Pro Max',
-    value: '128GB: R$6.800 à vista',
-    card: '12x de R$665 nos cartões',
+    value: '128GB: R$6.850 à vista',
+    card: '12x de R$670 nos cartões',
+    valueSecond: '256GB: R$7.400 à vista',
+    cardSecond: '12x de R$725 nos cartões'
+  },
+  {
+    image: iPhone15P,
+    name: 'iPhone 15 Pro',
+    value: '128GB: R$6.700 à vista',
+    card: '12x de R$660 nos cartões',
     valueSecond: '256GB: R$7.300 à vista',
-    cardSecond: '12x de R$715 nos cartões'
+    cardSecond: '12x de R$720 nos cartões'
+  },
+  {
+    image: iPhone15PMax,
+    name: 'iPhone 15 Pro Max',
+    value: '256GB: R$8.400 à vista',
+    card: '12x de R$820 nos cartões',
+    valueSecond: '512GB: R$9.000 à vista',
+    cardSecond: '12x de R$880 nos cartões'
   }
 ]
 
@@ -159,7 +186,7 @@ export function Catalog() {
           <span> alguma dúvida?</span>
         </h1>
 
-        <a href="https://wa.me/55082999696575">
+        <a href="https://wa.me/55082993271667">
           <img src={WhatsApp} />
         </a>
       </Foot>
