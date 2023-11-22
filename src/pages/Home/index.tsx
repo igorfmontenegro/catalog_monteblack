@@ -16,6 +16,7 @@ import { Product } from '../../components/Product'
 export interface ProductListProps {
   image: string
   name: string
+  condition?: string
   value: string
   card: string
   valueSecond?: string

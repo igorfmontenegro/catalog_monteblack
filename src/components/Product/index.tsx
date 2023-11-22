@@ -7,7 +7,7 @@ import {
   ProductName
 } from './Product.styles'
 
-import { ProductListProps } from '../Catalog/Catalog'
+import { ProductListProps } from '../../pages/Home'
 
 export function Product(props: ProductListProps) {
   return (
@@ -20,6 +20,7 @@ export function Product(props: ProductListProps) {
         <ProductDescription>
           <ProductName>
             {props.name} <br></br>
+            <span> {props.condition} </span>
           </ProductName>
           <h4> {props.value} </h4>
           <p> {props.card} </p>
