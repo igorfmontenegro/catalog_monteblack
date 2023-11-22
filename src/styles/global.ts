@@ -14,10 +14,6 @@ export const GlobalStyles = createGlobalStyle`
     overflow-x: hidden;
 }
 
-html{
-    scroll-behavior: smooth;
-}
-
 body{
     background-color: #000000;
     background-image: url(${BrokenNoise});

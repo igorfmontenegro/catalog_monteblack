@@ -26,6 +26,7 @@ export const Foot = styled.div`
   color: #ffffff;
   text-align: center;
   gap: 40px;
+  margin-bottom: 100px;
 
   h1 {
     width: 300px;
@@ -45,6 +46,5 @@ export const Foot = styled.div`
     display: block;
     margin: auto;
     width: 300px;
-    margin-bottom: 50px;
   }
 `
