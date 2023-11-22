@@ -14,6 +14,7 @@ export const Container = styled.div`
     border: 1.9px solid #ffffff;
     background: #ffffff;
     height: 50px;
+    width: 100%;
     margin-bottom: 25px;
     outline: none;
   }
@@ -22,6 +23,7 @@ export const Container = styled.div`
     height: 50px;
     width: 50px;
     margin-bottom: 25px;
+    border: 1px solid #000000;
   }
 
   label {
