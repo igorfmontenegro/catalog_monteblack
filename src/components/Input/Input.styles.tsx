@@ -3,9 +3,10 @@ import styled from 'styled-components'
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 10px;
 
-  input {
+  input[type='text'] {
     font-family: inherit;
     font-size: 16px;
     padding-left: 10px;
@@ -15,6 +16,12 @@ export const Container = styled.div`
     height: 50px;
     margin-bottom: 25px;
     outline: none;
+  }
+
+  input[type='checkbox'] {
+    height: 50px;
+    width: 50px;
+    margin-bottom: 25px;
   }
 
   label {
