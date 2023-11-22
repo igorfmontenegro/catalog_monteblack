@@ -9,6 +9,7 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 40px;
+  margin-bottom: 120px;
 `
 export const Blur = styled.div`
   position: absolute;
