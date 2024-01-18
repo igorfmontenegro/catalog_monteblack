@@ -7,7 +7,6 @@ import iPhone12 from '../../assets/iphone12.png'
 import iPhone13 from '../../assets/iphone13.png'
 import iPhone14 from '../../assets/iphone14.png'
 import iPhone15 from '../../assets/iphone15.png'
-import iPhone14PMax from '../../assets/iphone14promax.png'
 import iPhone15P from '../../assets/iphone15pro.png'
 import iPhone15PMax from '../../assets/iphone15promax.png'
 
@@ -43,34 +42,26 @@ const ProductList: Array<ProductListProps> = [
   {
     image: iPhone13,
     name: 'iPhone 13',
-    value: '128GB: R$3.750 à vista',
-    card: '12x de R$360 nos cartões',
+    value: '128GB: R$3.800 à vista',
+    card: '12x de R$365 nos cartões',
     valueSecond: '256GB: R$4.700 à vista',
     cardSecond: '12x de R$460 nos cartões'
   },
   {
     image: iPhone14,
     name: 'iPhone 14',
-    value: '128GB: R$4.250 à vista',
-    card: '12x de R$410 nos cartões',
+    value: '128GB: R$4.400 à vista',
+    card: '12x de R$430 nos cartões',
     valueSecond: '256GB: R$5.200 à vista',
     cardSecond: '12x de R$510 nos cartões'
   },
   {
     image: iPhone15,
     name: 'iPhone 15',
-    value: '128GB: R$5.400 à vista',
-    card: '12x de R$530 nos cartões',
+    value: '128GB: R$5.200 à vista',
+    card: '12x de R$510 nos cartões',
     valueSecond: '256GB: R$6.300 à vista',
     cardSecond: '12x de R$620 nos cartões'
-  },
-  {
-    image: iPhone14PMax,
-    name: 'iPhone 14 Pro Max',
-    value: '128GB: R$6.850 à vista',
-    card: '12x de R$670 nos cartões',
-    valueSecond: '256GB: R$7.400 à vista',
-    cardSecond: '12x de R$725 nos cartões'
   },
   {
     image: iPhone15P,
@@ -83,10 +74,10 @@ const ProductList: Array<ProductListProps> = [
   {
     image: iPhone15PMax,
     name: 'iPhone 15 Pro Max',
-    value: '256GB: R$7.800 à vista',
-    card: '12x de R$760 nos cartões',
-    valueSecond: '512GB: R$9.000 à vista',
-    cardSecond: '12x de R$880 nos cartões'
+    value: '256GB: R$7.600 à vista',
+    card: '12x de R$745 nos cartões',
+    valueSecond: '512GB: R$9.400 à vista',
+    cardSecond: '12x de R$920 nos cartões'
   }
 ]
 
