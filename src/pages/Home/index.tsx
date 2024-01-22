@@ -34,9 +34,9 @@ const ProductList: Array<ProductListProps> = [
   {
     image: iPhone12,
     name: 'iPhone 12',
-    value: '64GB: R$3.100 à vista',
+    value: '64GB: R$3.300 à vista',
     card: '12x de R$300 nos cartões',
-    valueSecond: '128GB: R$3.500 à vista',
+    valueSecond: '128GB: R$3.600 à vista',
     cardSecond: '12x de R$340 nos cartões'
   },
   {
