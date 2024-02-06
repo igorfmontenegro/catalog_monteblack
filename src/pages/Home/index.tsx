@@ -26,8 +26,8 @@ const ProductList: Array<ProductListProps> = [
   {
     image: iPhone11,
     name: 'iPhone 11',
-    value: '64GB: R$2.700 à vista',
-    card: '12x de R$260 nos cartões',
+    value: '64GB: R$2.650 à vista',
+    card: '12x de R$255 nos cartões',
     valueSecond: '128GB: R$3.100 à vista',
     cardSecond: '12x de R$300 nos cartões'
   },
@@ -42,7 +42,7 @@ const ProductList: Array<ProductListProps> = [
   {
     image: iPhone13,
     name: 'iPhone 13',
-    value: '128GB: R$3.800 à vista',
+    value: '128GB: R$3.750 à vista',
     card: '12x de R$365 nos cartões',
     valueSecond: '256GB: R$4.700 à vista',
     cardSecond: '12x de R$460 nos cartões'
@@ -50,34 +50,34 @@ const ProductList: Array<ProductListProps> = [
   {
     image: iPhone14,
     name: 'iPhone 14',
-    value: '128GB: R$4.400 à vista',
-    card: '12x de R$430 nos cartões',
+    value: '128GB: R$4.150 à vista',
+    card: '12x de R$405 nos cartões',
     valueSecond: '256GB: R$5.200 à vista',
     cardSecond: '12x de R$510 nos cartões'
   },
   {
     image: iPhone15,
     name: 'iPhone 15',
-    value: '128GB: R$5.200 à vista',
-    card: '12x de R$510 nos cartões',
+    value: '128GB: R$5.000 à vista',
+    card: '12x de R$490 nos cartões',
     valueSecond: '256GB: R$6.300 à vista',
     cardSecond: '12x de R$620 nos cartões'
   },
   {
     image: iPhone15P,
     name: 'iPhone 15 Pro',
-    value: '128GB: R$6.700 à vista',
-    card: '12x de R$660 nos cartões',
-    valueSecond: '256GB: R$7.300 à vista',
-    cardSecond: '12x de R$720 nos cartões'
+    value: '128GB: R$6.250 à vista',
+    card: '12x de R$615 nos cartões',
+    valueSecond: '256GB: R$6.900 à vista',
+    cardSecond: '12x de R$680 nos cartões'
   },
   {
     image: iPhone15PMax,
     name: 'iPhone 15 Pro Max',
-    value: '256GB: R$7.600 à vista',
-    card: '12x de R$745 nos cartões',
-    valueSecond: '512GB: R$9.400 à vista',
-    cardSecond: '12x de R$920 nos cartões'
+    value: '256GB: R$7.250 à vista',
+    card: '12x de R$715 nos cartões',
+    valueSecond: '512GB: R$8.900 à vista',
+    cardSecond: '12x de R$880 nos cartões'
   }
 ]
 
