@@ -66,7 +66,7 @@ const ProductList: Array<ProductListProps> = [
   {
     image: iPhone15P,
     name: 'iPhone 15 Pro',
-    value: '128GB: R$5.900 à vista',
+    value: '128GB: R$5.800 à vista',
     card: '12x de R$580 nos cartões',
     valueSecond: '256GB: R$6.500 à vista',
     cardSecond: '12x de R$640 nos cartões'
@@ -74,7 +74,7 @@ const ProductList: Array<ProductListProps> = [
   {
     image: iPhone15PMax,
     name: 'iPhone 15 Pro Max',
-    value: '256GB: R$6.900 à vista',
+    value: '256GB: R$6.600 à vista',
     card: '12x de R$680 nos cartões',
     valueSecond: '512GB: R$8.400 à vista',
     cardSecond: '12x de R$830 nos cartões'
