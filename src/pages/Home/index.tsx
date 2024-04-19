@@ -34,7 +34,7 @@ const ProductList: Array<ProductListProps> = [
   {
     image: iPhone12,
     name: 'iPhone 12',
-    value: '64GB: R$3.300 à vista',
+    value: '64GB: R$3.000 à vista',
     card: '12x de R$320 nos cartões',
     valueSecond: '128GB: R$3.500 à vista',
     cardSecond: '12x de R$340 nos cartões'
@@ -42,32 +42,32 @@ const ProductList: Array<ProductListProps> = [
   {
     image: iPhone13,
     name: 'iPhone 13',
-    value: '128GB: R$3.600 à vista',
-    card: '12x de R$355 nos cartões',
+    value: '128GB: R$3.550 à vista',
+    card: '12x de R$350 nos cartões',
     valueSecond: '256GB: R$3.900 à vista',
     cardSecond: '12x de R$385 nos cartões'
   },
   {
     image: iPhone14,
     name: 'iPhone 14',
-    value: '128GB: R$4.000 à vista',
-    card: '12x de R$395 nos cartões',
+    value: '128GB: R$3.950 à vista',
+    card: '12x de R$390 nos cartões',
     valueSecond: '256GB: R$4.800 à vista',
     cardSecond: '12x de R$470 nos cartões'
   },
   {
     image: iPhone15,
     name: 'iPhone 15',
-    value: '128GB: R$4.750 à vista',
-    card: '12x de R$465 nos cartões',
+    value: '128GB: R$4.600 à vista',
+    card: '12x de R$455 nos cartões',
     valueSecond: '256GB: R$5.300 à vista',
     cardSecond: '12x de R$520 nos cartões'
   },
   {
     image: iPhone15P,
     name: 'iPhone 15 Pro',
-    value: '128GB: R$5.800 à vista',
-    card: '12x de R$580 nos cartões',
+    value: '128GB: R$5.900 à vista',
+    card: '12x de R$585 nos cartões',
     valueSecond: '256GB: R$6.500 à vista',
     cardSecond: '12x de R$640 nos cartões'
   },
@@ -76,8 +76,8 @@ const ProductList: Array<ProductListProps> = [
     name: 'iPhone 15 Pro Max',
     value: '256GB: R$6.600 à vista',
     card: '12x de R$680 nos cartões',
-    valueSecond: '512GB: R$8.400 à vista',
-    cardSecond: '12x de R$830 nos cartões'
+    valueSecond: '512GB: R$8.300 à vista',
+    cardSecond: '12x de R$820 nos cartões'
   }
 ]
 
