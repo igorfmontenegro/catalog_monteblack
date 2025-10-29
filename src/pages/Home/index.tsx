@@ -35,8 +35,8 @@ const ProductList: Array<ProductListProps> = [
     name: 'iPhone 14',
     value: '128GB: R$3.500 à vista',
     card: '12x de R$340 nos cartões',
-    valueSecond: '256GB: R$3.900 à vista',
-    cardSecond: '12x de R$380 nos cartões'
+    valueSecond: '256GB: R$3.800 à vista',
+    cardSecond: '12x de R$370 nos cartões'
   },
   {
     image: iPhone15,
