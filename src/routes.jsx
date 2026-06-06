@@ -3,6 +3,7 @@ import Home from './pages/Home'
 import Calculadora from './pages/Calculadora'
 import Duvidas from './pages/Duvidas'
 import Layout from './pages/Layout'
+import Estoque from './pages/Estoque'
 
 function AppRoutes() {
   return (
@@ -13,6 +14,7 @@ function AppRoutes() {
           <Route path="/duvidas" element={<Duvidas />} />
           <Route path="/calculadora" element={<Calculadora />} />
         </Route>
+        <Route path="/estoque" element={<Estoque />} />
       </Routes>
     </BrowserRouter>
   )
