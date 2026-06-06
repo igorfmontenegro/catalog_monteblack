@@ -457,19 +457,14 @@ export default function Estoque() {
   async function saveStock() {
     setSaving(true)
     try {
-      if (recordId) {
-        await supabase
-          .from('estoque')
-          .update({ conteudo: editStock, created_at: new Date().toISOString() })
-          .eq('id', recordId)
-      } else {
-        const { data } = await supabase
-          .from('estoque')
-          .insert({ conteudo: editStock })
-          .select()
-          .single()
-        if (data) setRecordId(data.id)
-      }
+      // Apaga todos os registros antigos e insere um novo
+      await supabase.from('estoque').delete().neq('id', 0)
+      const { data } = await supabase
+        .from('estoque')
+        .insert({ conteudo: editStock })
+        .select()
+        .single()
+      if (data) setRecordId(data.id)
       setStock(editStock)
       const now = new Date().toLocaleDateString('pt-BR', {
         day: '2-digit', month: '2-digit', year: 'numeric',
