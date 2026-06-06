@@ -122,7 +122,7 @@ const Input = styled.input`
   background: transparent;
   border: none;
   color: #fff;
-  font-size: 15px;
+  font-size: 16px;
   padding: 16px 16px 16px 0;
   outline: none;
   min-width: 0;
