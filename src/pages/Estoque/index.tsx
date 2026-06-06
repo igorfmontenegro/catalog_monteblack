@@ -395,7 +395,7 @@ export default function Estoque() {
     setLoading(true)
     try {
       const { data } = await supabase
-        .from('estoque')
+        .from('Estoque')
         .select('*')
         .order('id', { ascending: false })
         .limit(1)
@@ -458,9 +458,9 @@ export default function Estoque() {
     setSaving(true)
     try {
       // Apaga todos os registros antigos e insere um novo
-      await supabase.from('estoque').delete().neq('id', 0)
+      await supabase.from('Estoque').delete().neq('id', 0)
       const { data } = await supabase
-        .from('estoque')
+        .from('Estoque')
         .insert({ conteudo: editStock })
         .select()
         .single()
