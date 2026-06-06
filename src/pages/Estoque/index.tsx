@@ -24,6 +24,23 @@ Garmin 165 🩶  R$1.700
 Boombox 4 🩶  R$2.350
 Starlink Mini 🛰️  R$850`
 
+
+function renderStock(text: string) {
+  return text.split('\n').map((line, i) => {
+    const parts = line.split(/\*([^*]+)\*/)
+    return (
+      <div key={i}>
+        {parts.map((part, j) =>
+          j % 2 === 1
+            ? <strong key={j} style={{ color: '#fff', fontWeight: 700 }}>{part}</strong>
+            : part
+        )}
+        {parts.length === 1 && line === '' ? <br /> : null}
+      </div>
+    )
+  })
+}
+
 const blink = keyframes`
   0%, 100% { opacity: 1; }
   50% { opacity: 0.3; }
@@ -122,7 +139,7 @@ const Input = styled.input`
   background: transparent;
   border: none;
   color: #fff;
-  font-size: 16px;
+  font-size: 15px;
   padding: 16px 16px 16px 0;
   outline: none;
   min-width: 0;
@@ -216,7 +233,6 @@ const StockText = styled.div`
   font-size: 14px;
   line-height: 1.9;
   color: #ddd;
-  white-space: pre-wrap;
   word-break: break-word;
   overflow-wrap: break-word;
   font-family: inherit;
@@ -464,7 +480,7 @@ export default function Estoque() {
               </ActionRow>
             </>
           ) : (
-            <StockText>{stock}</StockText>
+            <StockText>{renderStock(stock)}</StockText>
           )}
 
           <Divider />
