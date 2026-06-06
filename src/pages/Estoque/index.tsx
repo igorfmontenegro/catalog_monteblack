@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import styled, { keyframes } from 'styled-components'
 
-const PASSWORD = 'revenda'
-const ADMIN_PASSWORD = 'igorfm'
+const PASSWORD = import.meta.env.VITE_PASSWORD
+const ADMIN_PASSWORD = import.meta.env.VITE_ADMIN_PASSWORD
 
 const DEFAULT_STOCK = `*LACRADOS* 🇧🇷
 
@@ -47,6 +47,9 @@ const Wrapper = styled.div`
   background: #1a1a1a;
   color: #fff;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  overflow-x: hidden;
+  width: 100%;
+  box-sizing: border-box;
 `
 
 const LoginScreen = styled.div`
@@ -55,8 +58,9 @@ const LoginScreen = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
+  padding: 1.5rem;
   text-align: center;
+  box-sizing: border-box;
 `
 
 const Avatar = styled.div`
@@ -110,6 +114,7 @@ const InputIcon = styled.span`
   padding: 0 14px;
   font-size: 18px;
   color: #888;
+  flex-shrink: 0;
 `
 
 const Input = styled.input`
@@ -120,6 +125,7 @@ const Input = styled.input`
   font-size: 15px;
   padding: 16px 16px 16px 0;
   outline: none;
+  min-width: 0;
   &::placeholder { color: #444; }
 `
 
@@ -151,11 +157,12 @@ const ErrorMsg = styled.div`
 const StockScreen = styled.div`
   min-height: 100vh;
   animation: ${fadeIn} 0.4s ease;
+  overflow-x: hidden;
 `
 
 const StockHero = styled.div`
   background: #111;
-  padding: 2rem;
+  padding: 1.25rem 1rem;
   border-bottom: 1px solid #333;
   display: flex;
   align-items: center;
@@ -163,15 +170,15 @@ const StockHero = styled.div`
 `
 
 const HeroAvatar = styled.div`
-  width: 64px;
-  height: 64px;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
   background: #222;
   border: 2px solid #333;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   flex-shrink: 0;
 `
 
@@ -186,9 +193,11 @@ const LiveDot = styled.span`
 `
 
 const StockBody = styled.div`
-  padding: 1.5rem;
+  padding: 1.25rem 1rem;
   max-width: 700px;
   margin: 0 auto;
+  box-sizing: border-box;
+  overflow-x: hidden;
 `
 
 const SectionLabel = styled.div`
@@ -203,12 +212,15 @@ const SectionLabel = styled.div`
   &::after { content: ''; flex: 1; height: 1px; background: #333; }
 `
 
-const StockText = styled.pre`
+const StockText = styled.div`
   font-size: 14px;
   line-height: 1.9;
   color: #ddd;
   white-space: pre-wrap;
+  word-break: break-word;
+  overflow-wrap: break-word;
   font-family: inherit;
+  width: 100%;
 `
 
 const StockEditor = styled.textarea`
@@ -224,6 +236,7 @@ const StockEditor = styled.textarea`
   outline: none;
   min-height: 280px;
   font-family: inherit;
+  box-sizing: border-box;
   &:focus { border-color: #fff; }
 `
 
@@ -242,7 +255,7 @@ const Btn = styled.button<{ variant?: 'primary' | 'secondary' }>`
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s;
-  min-width: 120px;
+  min-width: 100px;
   font-family: inherit;
   background: ${p => p.variant === 'primary' ? '#fff' : '#222'};
   color: ${p => p.variant === 'primary' ? '#111' : '#fff'};
@@ -266,6 +279,7 @@ const AdminRow = styled.div`
   padding: 14px 16px;
   cursor: pointer;
   transition: border-color 0.2s;
+  gap: 1rem;
   &:hover { border-color: #888; }
 `
 
@@ -304,6 +318,7 @@ const LogoutLink = styled.button`
   border: none;
   cursor: pointer;
   text-decoration: underline;
+  padding: 0.5rem;
   &:hover { color: #fff; }
 `
 
@@ -316,6 +331,7 @@ const ModalOverlay = styled.div`
   align-items: center;
   justify-content: center;
   padding: 1.5rem;
+  box-sizing: border-box;
 `
 
 const ModalBox = styled.div`
@@ -326,6 +342,7 @@ const ModalBox = styled.div`
   width: 100%;
   max-width: 320px;
   animation: ${fadeIn} 0.2s ease;
+  box-sizing: border-box;
 `
 
 export default function Estoque() {
@@ -428,7 +445,7 @@ export default function Estoque() {
         <StockHero>
           <HeroAvatar>📱</HeroAvatar>
           <div>
-            <h2 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: 3 }}>Estoque disponível hoje</h2>
+            <h2 style={{ fontSize: '1rem', fontWeight: 700, marginBottom: 3 }}>Estoque disponível hoje</h2>
             <p style={{ fontSize: 13, color: '#888', display: 'flex', alignItems: 'center' }}>
               <LiveDot />{lastUpdate}
             </p>
@@ -453,7 +470,7 @@ export default function Estoque() {
           <Divider />
 
           <AdminRow onClick={openAdminModal}>
-            <div>
+            <div style={{ flex: 1, minWidth: 0 }}>
               <div style={{ fontSize: 14, fontWeight: 500 }}>Modo administrador</div>
               <div style={{ fontSize: 12, color: '#888', marginTop: 2 }}>Requer senha para editar o estoque</div>
             </div>
