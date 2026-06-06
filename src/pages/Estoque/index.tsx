@@ -1,5 +1,11 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import styled, { keyframes } from 'styled-components'
+import { createClient } from '@supabase/supabase-js'
+
+const supabase = createClient(
+  import.meta.env.VITE_SUPABASE_URL,
+  import.meta.env.VITE_SUPABASE_KEY
+)
 
 const PASSWORD = import.meta.env.VITE_PASSWORD
 const ADMIN_PASSWORD = import.meta.env.VITE_ADMIN_PASSWORD
@@ -23,7 +29,6 @@ MacBook Air M4 16/256 💙  R$6.900
 Garmin 165 🩶  R$1.700
 Boombox 4 🩶  R$2.350
 Starlink Mini 🛰️  R$850`
-
 
 function renderStock(text: string) {
   return text.split('\n').map((line, i) => {
@@ -139,7 +144,7 @@ const Input = styled.input`
   background: transparent;
   border: none;
   color: #fff;
-  font-size: 15px;
+  font-size: 16px;
   padding: 16px 16px 16px 0;
   outline: none;
   min-width: 0;
@@ -263,20 +268,21 @@ const ActionRow = styled.div`
   flex-wrap: wrap;
 `
 
-const Btn = styled.button<{ variant?: 'primary' | 'secondary' }>`
+const Btn = styled.button<{ variant?: 'primary' | 'secondary'; disabled?: boolean }>`
   flex: 1;
   padding: 14px;
   border-radius: 12px;
   font-size: 14px;
   font-weight: 600;
-  cursor: pointer;
+  cursor: ${p => p.disabled ? 'not-allowed' : 'pointer'};
   transition: all 0.2s;
   min-width: 100px;
   font-family: inherit;
   background: ${p => p.variant === 'primary' ? '#fff' : '#222'};
   color: ${p => p.variant === 'primary' ? '#111' : '#fff'};
   border: ${p => p.variant === 'primary' ? 'none' : '1px solid #333'};
-  &:hover { opacity: 0.9; }
+  opacity: ${p => p.disabled ? 0.5 : 1};
+  &:hover { opacity: ${p => p.disabled ? 0.5 : 0.9}; }
 `
 
 const Divider = styled.div`
@@ -361,6 +367,13 @@ const ModalBox = styled.div`
   box-sizing: border-box;
 `
 
+const LoadingMsg = styled.div`
+  font-size: 13px;
+  color: #888;
+  text-align: center;
+  padding: 2rem 0;
+`
+
 export default function Estoque() {
   const [screen, setScreen] = useState<'login' | 'stock'>('login')
   const [pass, setPass] = useState('')
@@ -371,14 +384,46 @@ export default function Estoque() {
   const [adminPass, setAdminPass] = useState('')
   const [adminError, setAdminError] = useState(false)
   const [adminErrorMsg, setAdminErrorMsg] = useState('')
-  const [stock, setStock] = useState(() => localStorage.getItem('mb_stock') || DEFAULT_STOCK)
-  const [editStock, setEditStock] = useState(stock)
-  const [lastUpdate, setLastUpdate] = useState(() => localStorage.getItem('mb_date') || 'Atualizado agora')
+  const [stock, setStock] = useState(DEFAULT_STOCK)
+  const [editStock, setEditStock] = useState(DEFAULT_STOCK)
+  const [lastUpdate, setLastUpdate] = useState('Carregando...')
+  const [loading, setLoading] = useState(false)
+  const [saving, setSaving] = useState(false)
+  const [recordId, setRecordId] = useState<number | null>(null)
+
+  async function loadStock() {
+    setLoading(true)
+    try {
+      const { data } = await supabase
+        .from('estoque')
+        .select('*')
+        .order('id', { ascending: false })
+        .limit(1)
+        .single()
+
+      if (data) {
+        setStock(data.conteudo)
+        setEditStock(data.conteudo)
+        setRecordId(data.id)
+        const date = new Date(data.created_at).toLocaleDateString('pt-BR', {
+          day: '2-digit', month: '2-digit', year: 'numeric',
+          hour: '2-digit', minute: '2-digit'
+        })
+        setLastUpdate('Atualizado em ' + date)
+      } else {
+        setLastUpdate('Nenhum estoque cadastrado')
+      }
+    } catch {
+      setLastUpdate('Erro ao carregar')
+    }
+    setLoading(false)
+  }
 
   function checkPassword() {
     if (pass.trim().toLowerCase() === PASSWORD) {
       setScreen('stock')
       setPass('')
+      loadStock()
     } else {
       setPassError(true)
       setPassErrorMsg('Palavra-chave incorreta. Tente novamente.')
@@ -409,13 +454,33 @@ export default function Estoque() {
     }
   }
 
-  function saveStock() {
-    const now = new Date().toLocaleDateString('pt-BR', { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' })
-    localStorage.setItem('mb_stock', editStock)
-    localStorage.setItem('mb_date', 'Atualizado em ' + now)
-    setStock(editStock)
-    setLastUpdate('Atualizado em ' + now)
-    cancelEdit()
+  async function saveStock() {
+    setSaving(true)
+    try {
+      if (recordId) {
+        await supabase
+          .from('estoque')
+          .update({ conteudo: editStock, created_at: new Date().toISOString() })
+          .eq('id', recordId)
+      } else {
+        const { data } = await supabase
+          .from('estoque')
+          .insert({ conteudo: editStock })
+          .select()
+          .single()
+        if (data) setRecordId(data.id)
+      }
+      setStock(editStock)
+      const now = new Date().toLocaleDateString('pt-BR', {
+        day: '2-digit', month: '2-digit', year: 'numeric',
+        hour: '2-digit', minute: '2-digit'
+      })
+      setLastUpdate('Atualizado em ' + now)
+      cancelEdit()
+    } catch {
+      alert('Erro ao salvar. Tente novamente.')
+    }
+    setSaving(false)
   }
 
   function cancelEdit() {
@@ -471,12 +536,16 @@ export default function Estoque() {
         <StockBody>
           <SectionLabel>produtos disponíveis</SectionLabel>
 
-          {adminOn ? (
+          {loading ? (
+            <LoadingMsg>Carregando estoque...</LoadingMsg>
+          ) : adminOn ? (
             <>
               <StockEditor value={editStock} onChange={e => setEditStock(e.target.value)} />
               <ActionRow>
                 <Btn variant="secondary" onClick={cancelEdit}>Cancelar</Btn>
-                <Btn variant="primary" onClick={saveStock}>Salvar estoque</Btn>
+                <Btn variant="primary" onClick={saveStock} disabled={saving}>
+                  {saving ? 'Salvando...' : 'Salvar estoque'}
+                </Btn>
               </ActionRow>
             </>
           ) : (
