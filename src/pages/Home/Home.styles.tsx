@@ -20,6 +20,7 @@ export const Products = styled.div`
     padding: 10px;
     text-align: center;
 
+
     span {
       font-size: 18px;
       font-weight: 300;
