@@ -55,6 +55,7 @@ export const ProductDescription = styled.div`
     color: #fff;
   }
 
+
   p {
     font-size: 12px;
     color: #999;
