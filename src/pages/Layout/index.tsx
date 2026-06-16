@@ -2,15 +2,23 @@ import { Outlet } from 'react-router-dom'
 import { useState } from 'react'
 
 import {
-  Avatar,
   Blur,
   BrandLogo,
   CellphoneBG,
   Container,
-  Header,
   Menu,
   SmartWatchBG,
-  Title
+  HeroCard,
+  HeroTitle,
+  HeroStats,
+  HeroStat,
+  HeroStatNum,
+  HeroStatLabel,
+  HeroDivider,
+  HeroRow,
+  HeroAvatar,
+  HeroText,
+  HeroSub
 } from './Layout.styles'
 
 import Logo from '../../assets/Logo.png'
@@ -35,12 +43,37 @@ function Layout() {
       <Blur />
       <CellphoneBG src={Cellphone} />
       <SmartWatchBG src={SmartWatch} />
-      <Header>
-        <Title>
-          Você está perto de encontrar o <span>iPhone perfeito</span> pra você!
-        </Title>
-        <Avatar src={Memoji} />
-      </Header>
+
+      <HeroCard>
+        <HeroTitle>
+          Importados <span>lacrados</span>,<br />com garantia real
+        </HeroTitle>
+
+        <HeroStats>
+          <HeroStat>
+            <HeroStatNum>12 meses</HeroStatNum>
+            <HeroStatLabel>de garantia</HeroStatLabel>
+          </HeroStat>
+          <HeroStat>
+            <HeroStatNum>100%</HeroStatNum>
+            <HeroStatLabel>procedência verificada</HeroStatLabel>
+          </HeroStat>
+          <HeroStat>
+            <HeroStatNum>+3.000</HeroStatNum>
+            <HeroStatLabel>aparelhos vendidos</HeroStatLabel>
+          </HeroStat>
+        </HeroStats>
+
+        <HeroDivider />
+
+        <HeroRow>
+          <HeroAvatar src={Memoji} />
+          <div>
+            <HeroText>Olá! Sou o <strong>Igor</strong>, da Monteblack.</HeroText>
+            <HeroSub>Separei os modelos disponíveis pra você ↓</HeroSub>
+          </div>
+        </HeroRow>
+      </HeroCard>
 
       <Outlet />
     </Container>
