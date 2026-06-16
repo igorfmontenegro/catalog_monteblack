@@ -53,10 +53,11 @@ export const CatalogSub = styled.div`
 export const CatalogGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr;
-  gap: 14px;
+  gap: 10px;
 
   @media (min-width: 560px) {
     grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
   }
 
   @media (min-width: 900px) {
@@ -72,7 +73,7 @@ export const Card = styled.div`
   background: #222;
   border: 1px solid #2e2e2e;
   border-radius: 14px;
-  padding: 1.1rem;
+  padding: 0.9rem 1rem;
   transition: border-color 0.2s;
 
   &:hover {
@@ -84,7 +85,7 @@ export const CardTop = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 14px;
+  margin-bottom: 10px;
   gap: 8px;
 `
 
@@ -112,7 +113,7 @@ export const Tier = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  padding: 8px 0;
+  padding: 6px 0;
 
   & + & {
     border-top: 1px solid #2a2a2a;
