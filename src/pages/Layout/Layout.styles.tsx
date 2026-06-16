@@ -66,26 +66,84 @@ export const Menu = styled.div`
   }
 `
 
-export const Header = styled.div`
-  display: flex;
-  width: 100%;
-  justify-content: space-evenly;
-  align-items: center;
+export const HeroCard = styled.div`
+  background: #141414;
+  border-radius: 16px;
+  padding: 1.5rem;
+  width: 90vw;
+  max-width: 560px;
+  box-sizing: border-box;
 `
 
-export const Title = styled.h1`
-  font-size: 22px;
-  width: 220px;
-  font-weight: 500;
-  color: #ffffff;
+export const HeroTitle = styled.h1`
+  font-size: 21px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.3;
+  margin-bottom: 4px;
 
   span {
-    font-weight: 600;
+    color: #cfa75e;
   }
 `
 
-export const Avatar = styled.img`
-  height: 120px;
+export const HeroStats = styled.div`
+  display: flex;
+  gap: 20px;
+  margin: 14px 0 18px;
+  flex-wrap: wrap;
+`
+
+export const HeroStat = styled.div``
+
+export const HeroStatNum = styled.div`
+  font-size: 17px;
+  font-weight: 700;
+  color: #fff;
+`
+
+export const HeroStatLabel = styled.div`
+  font-size: 10px;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-top: 1px;
+`
+
+export const HeroDivider = styled.div`
+  height: 1px;
+  background: #2a2a2a;
+  margin: 16px 0;
+`
+
+export const HeroRow = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 12px;
+`
+
+export const HeroAvatar = styled.img`
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
   background-color: #ffffff;
-  border-radius: 100px;
+  flex-shrink: 0;
+  object-fit: cover;
+`
+
+export const HeroText = styled.div`
+  font-size: 14px;
+  color: #ccc;
+  line-height: 1.5;
+
+  strong {
+    color: #fff;
+  }
+`
+
+export const HeroSub = styled.div`
+  font-size: 11px;
+  color: #cfa75e;
+  margin-top: 2px;
+  font-weight: 600;
 `
