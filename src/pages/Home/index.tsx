@@ -38,6 +38,7 @@ export interface ProductListProps {
   cores: string[]
 }
 
+
 const COLOR_PALETTE = [
   { hex: '#1a1a1a', label: 'Preto' },
   { hex: '#f0ede5', label: 'Branco' },
