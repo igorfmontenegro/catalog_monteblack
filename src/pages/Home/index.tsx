@@ -218,6 +218,7 @@ function Home() {
               card={productList.card}
               valueSecond={productList.valueSecond}
               cardSecond={productList.cardSecond}
+              produto_id={productList.produto_id}
             />
           )
         ))}
