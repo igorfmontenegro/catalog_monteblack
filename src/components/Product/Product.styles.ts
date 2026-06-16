@@ -3,13 +3,20 @@ import styled from 'styled-components'
 export const ContainerProduct = styled.div`
   display: grid;
   grid-template-columns: 40% 60%;
-  border: 3px solid #ffffff;
-  border-radius: 25px;
+  border: 1px solid #333;
+  border-radius: 20px;
   width: 90vw;
   max-width: 560px;
+  background: linear-gradient(180deg, #1c1c1c 0%, #161616 100%);
+  overflow: hidden;
+  transition: border-color 0.2s;
+
+  &:hover {
+    border-color: #555;
+  }
 
   & + & {
-    margin-top: -30px;
+    margin-top: -25px;
   }
 
   &:last-child {
@@ -19,9 +26,10 @@ export const ContainerProduct = styled.div`
 
 export const ContainerImage = styled.div`
   background-color: #ffffff;
-  padding: 15px;
-  border-radius: 20px;
-  text-align: center;
+  padding: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `
 
 export const ProductImage = styled.img`
@@ -31,25 +39,38 @@ export const ProductImage = styled.img`
 export const ContainerDescription = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  align-items: center;
+  gap: 18px;
+  align-items: flex-start;
   justify-content: center;
+  padding: 16px 20px;
 `
 
 export const ProductDescription = styled.div`
-  color: #ffffff;
+  color: #ddd;
+  width: 100%;
 
   h4 {
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 600;
+    color: #fff;
   }
 
   p {
     font-size: 12px;
+    color: #999;
+    margin-top: 2px;
   }
 `
 
 export const ProductName = styled.h3`
   font-size: 16px;
-  margin-bottom: 10px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: #fff;
+
+  span {
+    font-weight: 400;
+    color: #999;
+    font-size: 13px;
+  }
 `
