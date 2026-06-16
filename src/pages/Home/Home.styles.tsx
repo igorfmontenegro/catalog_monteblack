@@ -12,20 +12,42 @@ export const Products = styled.div`
     width: 100%;
     padding: 0 20px;
   }
+`
 
-  h2 {
-    color: #ffffff;
-    border: 2px solid #ffffff;
-    border-radius: 10px;
-    padding: 10px;
-    text-align: center;
+export const CatalogHeader = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-bottom: 1.25rem;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid #2a2a2a;
+`
 
+export const CatalogAvatar = styled.div`
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #222;
+  border: 2px solid #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  flex-shrink: 0;
+`
 
-    span {
-      font-size: 18px;
-      font-weight: 300;
-    }
-  }
+export const CatalogTitle = styled.div`
+  font-size: 17px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 3px;
+`
+
+export const CatalogSub = styled.div`
+  font-size: 12px;
+  color: #cfa75e;
+  font-weight: 600;
+  letter-spacing: 0.03em;
 `
 
 export const CatalogGrid = styled.div`
