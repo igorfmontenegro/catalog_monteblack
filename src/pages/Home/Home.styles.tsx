@@ -5,7 +5,7 @@ export const Products = styled.div`
   flex-direction: column;
   gap: 24px;
   margin: 0px 20px;
-  max-width: 1100px;
+  max-width: 1320px;
 
   @media (min-width: 760px) {
     margin: 0 auto;
@@ -61,6 +61,10 @@ export const CatalogGrid = styled.div`
 
   @media (min-width: 900px) {
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(4, 1fr);
   }
 `
 
