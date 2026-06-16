@@ -5,6 +5,7 @@ export const Products = styled.div`
   flex-direction: column;
   gap: 50px;
   margin: 0px 20px;
+  
 
   h2 {
     color: #ffffff;
