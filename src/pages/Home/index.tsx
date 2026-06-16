@@ -3,6 +3,10 @@ import { createClient } from '@supabase/supabase-js'
 import {
   Products,
   Foot,
+  CatalogHeader,
+  CatalogAvatar,
+  CatalogTitle,
+  CatalogSub,
   CatalogGrid,
   Card,
   CardTop,
@@ -37,7 +41,6 @@ export interface ProductListProps {
   cardSecond?: string
   cores: string[]
 }
-
 
 const COLOR_PALETTE = [
   { hex: '#1a1a1a', label: 'Preto' },
@@ -166,10 +169,13 @@ function Home() {
   return (
     <>
       <Products>
-        <h2>
-          CATÁLOGO <br></br>
-          <span> Lacrados com 01 ano de Garantia</span>
-        </h2>
+        <CatalogHeader>
+          <CatalogAvatar>📱</CatalogAvatar>
+          <div>
+            <CatalogTitle>Catálogo de produtos</CatalogTitle>
+            <CatalogSub>LACRADOS · GARANTIA 12 MESES</CatalogSub>
+          </div>
+        </CatalogHeader>
 
         {!loading && (
           <CatalogGrid>
