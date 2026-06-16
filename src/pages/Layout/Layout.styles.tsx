@@ -5,7 +5,7 @@ export const Container = styled.div`
   margin: auto;
   display: flex;
   width: 100vw;
-  max-width: 700px;
+  max-width: 1360px;
   flex-direction: column;
   align-items: center;
   gap: 40px;
@@ -70,9 +70,16 @@ export const HeroCard = styled.div`
   background: #141414;
   border-radius: 16px;
   padding: 1.5rem;
-  width: 90vw;
+  width: calc(100% - 40px);
   max-width: 560px;
+  margin: 0 auto;
   box-sizing: border-box;
+
+  @media (min-width: 760px) {
+    width: 100%;
+    max-width: 1320px;
+    padding: 1.5rem 20px;
+  }
 `
 
 export const HeroTitle = styled.h1`
