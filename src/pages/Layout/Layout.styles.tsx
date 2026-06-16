@@ -70,12 +70,11 @@ export const HeroCard = styled.div`
   background: #141414;
   border-radius: 16px;
   padding: 1.5rem;
-  width: calc(100% - 40px);
-  max-width: 560px;
-  margin: 0 auto;
+  margin: 0 20px;
   box-sizing: border-box;
 
   @media (min-width: 760px) {
+    margin: 0 auto;
     width: 100%;
     max-width: 1320px;
     padding: 1.5rem 20px;
