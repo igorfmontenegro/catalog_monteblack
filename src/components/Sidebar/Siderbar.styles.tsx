@@ -5,39 +5,40 @@ interface ContainerProps {
 }
 
 export const Container = styled.div<ContainerProps>`
-  background-color: #000000;
+  background-color: #1a1a1a;
+  border-left: 1px solid #2a2a2a;
   position: fixed;
   height: 100%;
   top: 0px;
   right: 0px;
   width: 90%;
+  max-width: 320px;
   right: ${(props) => (props.sidebar ? '0' : '-100%')};
-  animation: showSidebar 0.4s;
+  transition: right 0.3s ease;
+  z-index: 200;
 
   > svg {
     position: fixed;
-    color: #ffffff;
-    width: 30px;
-    height: 30px;
-    margin-top: 32px;
-    margin-left: 32px;
+    color: #888;
+    width: 22px;
+    height: 22px;
+    margin-top: 28px;
+    margin-left: 28px;
     cursor: pointer;
-  }
+    transition: color 0.2s;
 
-  @keyframes showSidebar {
-    from {
-      opacity: 0;
-      width: 0;
-    }
-    to {
-      opacity: 1;
-      width: 90%;
+    &:hover {
+      color: #fff;
     }
   }
 `
 
 export const Content = styled.div`
-  margin-top: 100px;
+  margin-top: 90px;
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 
   a {
     text-decoration: none;
