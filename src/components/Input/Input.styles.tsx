@@ -3,31 +3,34 @@ import styled from 'styled-components'
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 10px;
+  gap: 8px;
 
   input[type='text'] {
     font-family: inherit;
     font-size: 16px;
-    padding-left: 10px;
-    border-radius: 7px;
-    border: 1.9px solid #ffffff;
-    background: #ffffff;
-    height: 50px;
+    padding: 0 14px;
+    border-radius: 10px;
+    border: 1px solid #333;
+    background: #222;
+    color: #fff;
+    height: 48px;
     width: 100%;
-    margin-bottom: 25px;
+    box-sizing: border-box;
     outline: none;
-  }
+    transition: border-color 0.2s;
 
-  input[type='checkbox'] {
-    height: 50px;
-    width: 50px;
-    margin-bottom: 25px;
-    border: 1px solid #000000;
+    &:focus {
+      border-color: #cfa75e;
+    }
+
+    &::placeholder {
+      color: #555;
+    }
   }
 
   label {
-    color: #ffffff;
-    font-weight: 500;
+    color: #ccc;
+    font-size: 13px;
+    font-weight: 600;
   }
 `
