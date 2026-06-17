@@ -1,10 +1,10 @@
 import { createGlobalStyle } from 'styled-components'
  
-import BrokenNoise from '../assets/broken-noise.png'
 export const GlobalStyles = createGlobalStyle`
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 #root{
     min-height: 100vh;
@@ -12,9 +12,8 @@ export const GlobalStyles = createGlobalStyle`
     overflow-x: hidden;
 }
 body{
-    background-color: #000000;
-    background-image: url(${BrokenNoise});
-    box-sizing: border-box;
-    font-family: Montserrat, sans-serif;
+    background-color: #1a1a1a;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: #fff;
 }
 `
