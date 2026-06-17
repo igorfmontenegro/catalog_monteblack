@@ -1,4 +1,4 @@
-import { Outlet } from 'react-router-dom'
+import { Outlet, useLocation } from 'react-router-dom'
 import { useState } from 'react'
 
 import {
@@ -28,9 +28,19 @@ import SmartWatch from '../../assets/smartwatch.png'
 import { FaBars } from 'react-icons/fa'
 import Sidebar from '../../components/Sidebar'
 
+const PAGE_GREETINGS: Record<string, string> = {
+  '/': 'Separei os modelos disponíveis pra você ↓',
+  '/calculadora': 'Calcule as taxas de juros você mesmo através da nossa calculadora.',
+  '/duvidas': 'Separei as perguntas mais frequentes pra te ajudar.'
+}
+
 function Layout() {
   const [sidebar, setSidebar] = useState(false)
   const showSidebar = () => setSidebar(!sidebar)
+  const location = useLocation()
+
+  const isHome = location.pathname === '/'
+  const greeting = PAGE_GREETINGS[location.pathname] || PAGE_GREETINGS['/']
 
   return (
     <Container>
@@ -45,32 +55,36 @@ function Layout() {
       <SmartWatchBG src={SmartWatch} />
 
       <HeroCard>
-        <HeroTitle>
-          Importados <span>lacrados</span>,<br />com garantia real
-        </HeroTitle>
+        {isHome && (
+          <>
+            <HeroTitle>
+              Importados <span>lacrados</span>,<br />com garantia real
+            </HeroTitle>
 
-        <HeroStats>
-          <HeroStat>
-            <HeroStatNum>12 meses</HeroStatNum>
-            <HeroStatLabel>de garantia</HeroStatLabel>
-          </HeroStat>
-          <HeroStat>
-            <HeroStatNum>100%</HeroStatNum>
-            <HeroStatLabel>procedência verificada</HeroStatLabel>
-          </HeroStat>
-          <HeroStat>
-            <HeroStatNum>+3.000</HeroStatNum>
-            <HeroStatLabel>aparelhos vendidos</HeroStatLabel>
-          </HeroStat>
-        </HeroStats>
+            <HeroStats>
+              <HeroStat>
+                <HeroStatNum>12 meses</HeroStatNum>
+                <HeroStatLabel>de garantia</HeroStatLabel>
+              </HeroStat>
+              <HeroStat>
+                <HeroStatNum>100%</HeroStatNum>
+                <HeroStatLabel>procedência verificada</HeroStatLabel>
+              </HeroStat>
+              <HeroStat>
+                <HeroStatNum>+3.000</HeroStatNum>
+                <HeroStatLabel>aparelhos vendidos</HeroStatLabel>
+              </HeroStat>
+            </HeroStats>
 
-        <HeroDivider />
+            <HeroDivider />
+          </>
+        )}
 
         <HeroRow>
           <HeroAvatar src={Memoji} />
           <div>
             <HeroText>Olá! Sou o <strong>Igor</strong>, da Monteblack.</HeroText>
-            <HeroSub>Separei os modelos disponíveis pra você ↓</HeroSub>
+            <HeroSub>{greeting}</HeroSub>
           </div>
         </HeroRow>
       </HeroCard>
