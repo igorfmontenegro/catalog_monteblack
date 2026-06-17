@@ -44,11 +44,11 @@ export interface ProductListProps {
 
 const COLOR_PALETTE = [
   { hex: '#1a1a1a', label: 'Preto' },
-  { hex: '#f0ede5', label: 'Branco' },
+  { hex: '#ffffff', label: 'Branco' },
   { hex: '#3d5a73', label: 'Azul' },
   { hex: '#1e3a52', label: 'Azul escuro' },
   { hex: '#a8c5d6', label: 'Azul clarinho' },
-  { hex: '#e8a8b8', label: 'Rosa' },
+  { hex: '#e91e8c', label: 'Rosa' },
   { hex: '#f0d4d8', label: 'Rosa clarinho' },
   { hex: '#7a9b7e', label: 'Verde' },
   { hex: '#b8a8d4', label: 'Lilás' },
@@ -57,10 +57,10 @@ const COLOR_PALETTE = [
 
 const DEFAULT_PRODUCTS: ProductListProps[] = [
   { produto_id: 'iphone-15', nome: 'iPhone 15', value: '128GB: R$3.750 à vista', card: '12x de R$370 nos cartões', valueSecond: '256GB: R$4.600 à vista', cardSecond: '12x de R$450 nos cartões', cores: ['#a8c5d6', '#f0d4d8', '#1a1a1a'] },
-  { produto_id: 'iphone-16', nome: 'iPhone 16', value: '128GB: R$4.500 à vista', card: '12x de R$440 nos cartões', valueSecond: '256GB: R$5.500 à vista', cardSecond: '12x de R$540 nos cartões', cores: ['#1a1a1a', '#f0ede5', '#3d5a73', '#e8a8b8', '#7a9b7e'] },
-  { produto_id: 'iphone-17', nome: 'iPhone 17', value: '128GB: R$6.500 à vista', card: '12x de R$640 nos cartões', valueSecond: '256GB: R$7.200 à vista', cardSecond: '12x de R$710 nos cartões', cores: ['#1a1a1a', '#f0ede5', '#3d5a73', '#b8a8d4'] },
-  { produto_id: 'iphone-17-pro', nome: 'iPhone 17 Pro', value: '256GB: R$9.800 à vista', card: '12x de R$970 nos cartões', valueSecond: '512GB: R$11.500 à vista', cardSecond: '12x de R$1.130 nos cartões', cores: ['#f0ede5', '#d4793d', '#1e3a52'] },
-  { produto_id: 'iphone-17-pro-max', nome: 'iPhone 17 Pro Max', value: '256GB: R$10.200 à vista', card: '12x de R$990 nos cartões', valueSecond: '512GB: R$12.000 à vista', cardSecond: '12x de R$1.190 nos cartões', cores: ['#f0ede5', '#d4793d', '#1e3a52'] }
+  { produto_id: 'iphone-16', nome: 'iPhone 16', value: '128GB: R$4.500 à vista', card: '12x de R$440 nos cartões', valueSecond: '256GB: R$5.500 à vista', cardSecond: '12x de R$540 nos cartões', cores: ['#1a1a1a', '#ffffff', '#3d5a73', '#e91e8c', '#7a9b7e'] },
+  { produto_id: 'iphone-17', nome: 'iPhone 17', value: '128GB: R$6.500 à vista', card: '12x de R$640 nos cartões', valueSecond: '256GB: R$7.200 à vista', cardSecond: '12x de R$710 nos cartões', cores: ['#1a1a1a', '#ffffff', '#3d5a73', '#b8a8d4'] },
+  { produto_id: 'iphone-17-pro', nome: 'iPhone 17 Pro', value: '256GB: R$9.800 à vista', card: '12x de R$970 nos cartões', valueSecond: '512GB: R$11.500 à vista', cardSecond: '12x de R$1.130 nos cartões', cores: ['#ffffff', '#d4793d', '#1e3a52'] },
+  { produto_id: 'iphone-17-pro-max', nome: 'iPhone 17 Pro Max', value: '256GB: R$10.200 à vista', card: '12x de R$990 nos cartões', valueSecond: '512GB: R$12.000 à vista', cardSecond: '12x de R$1.190 nos cartões', cores: ['#ffffff', '#d4793d', '#1e3a52'] }
 ]
 
 function Home() {
