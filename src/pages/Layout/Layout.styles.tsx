@@ -49,8 +49,9 @@ export const SmartWatchBG = styled.img`
 `
 
 export const BrandLogo = styled.img`
+  display: block;
   width: 150px;
-  margin-top: 30px;
+  margin: 30px auto 0;
 `
 
 export const Menu = styled.div`
