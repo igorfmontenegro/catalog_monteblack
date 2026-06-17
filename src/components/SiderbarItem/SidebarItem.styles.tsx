@@ -20,6 +20,7 @@ export const Container = styled.div`
   }
 
   svg {
+    position: static !important;
     width: 18px;
     height: 18px;
     color: #cfa75e;
