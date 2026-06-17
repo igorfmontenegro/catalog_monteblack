@@ -2,10 +2,10 @@ import { useState, ChangeEvent } from 'react'
 import { NumericFormat } from 'react-number-format'
 import { Input } from '../../components/Input'
 import {
-  CalcHeader,
+  Page,
+  CalcHero,
   CalcAvatar,
-  CalcTitle,
-  CalcSub,
+  CalcGreeting,
   Calculator,
   FieldLabel,
   CheckRow,
@@ -117,14 +117,13 @@ function Calculadora() {
   return (
     <>
       {!calculated ? (
-        <>
-          <CalcHeader>
+        <Page>
+          <CalcHero>
             <CalcAvatar>🧮</CalcAvatar>
-            <div>
-              <CalcTitle>Calculadora de taxas</CalcTitle>
-              <CalcSub>SIMULE SEU PARCELAMENTO</CalcSub>
-            </div>
-          </CalcHeader>
+            <CalcGreeting>
+              Calcule as taxas de juros você mesmo através da nossa <strong>calculadora</strong>.
+            </CalcGreeting>
+          </CalcHero>
 
           <Calculator onSubmit={calculateTax}>
             <FieldLabel>Qual o valor total a ser dividido?</FieldLabel>
@@ -167,16 +166,15 @@ function Calculadora() {
 
             <Button action="Calcular" />
           </Calculator>
-        </>
+        </Page>
       ) : (
-        <>
-          <CalcHeader>
+        <Page>
+          <CalcHero>
             <CalcAvatar>📊</CalcAvatar>
-            <div>
-              <CalcTitle>Resultado da simulação</CalcTitle>
-              <CalcSub>PARCELAMENTOS DISPONÍVEIS</CalcSub>
-            </div>
-          </CalcHeader>
+            <CalcGreeting>
+              Aqui está sua <strong>simulação</strong> de parcelamento.
+            </CalcGreeting>
+          </CalcHero>
 
           <ResultHero>
             <ResultLabel>Valor simulado</ResultLabel>
@@ -194,7 +192,7 @@ function Calculadora() {
           </InstallmentList>
 
           <Button action="Nova simulação" onClick={newSimulated} />
-        </>
+        </Page>
       )}
     </>
   )
