@@ -203,6 +203,17 @@ function Home() {
                           title={c.label}
                         />
                       ))}
+                      {(p.cores || [])
+                        .filter(hex => !COLOR_PALETTE.some(c => c.hex === hex))
+                        .map(hex => (
+                          <ColorOption
+                            key={hex}
+                            selected={true}
+                            style={{ background: hex, outline: '1px dashed #888' }}
+                            onClick={() => toggleColor(index, hex)}
+                            title={`${hex} (cor antiga, clique para remover)`}
+                          />
+                        ))}
                     </ColorPicker>
                     <label>Preço 1</label>
                     <input value={p.value} onChange={e => updateField(index, 'value', e.target.value)} />
