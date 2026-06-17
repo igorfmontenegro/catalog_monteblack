@@ -9,6 +9,10 @@ import {
   ResultHero,
   ResultLabel,
   ResultValue,
+  InstallmentHeader,
+  InstallmentHeaderTimes,
+  InstallmentHeaderEach,
+  InstallmentHeaderTotal,
   InstallmentList,
   InstallmentRow,
   InstallmentTimes,
@@ -163,6 +167,12 @@ function Calculadora() {
             <ResultLabel>Valor simulado</ResultLabel>
             <ResultValue>R$ {valueSimulated.toFixed(2)}</ResultValue>
           </ResultHero>
+
+          <InstallmentHeader>
+            <InstallmentHeaderTimes>Parcelas</InstallmentHeaderTimes>
+            <InstallmentHeaderEach>Valor parcela</InstallmentHeaderEach>
+            <InstallmentHeaderTotal>Valor total</InstallmentHeaderTotal>
+          </InstallmentHeader>
 
           <InstallmentList>
             {tableData.map((item, index) => (
