@@ -11,6 +11,39 @@ export const Page = styled.div`
   }
 `
 
+export const CalcHero = styled.div`
+  background: #222;
+  border-radius: 16px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+`
+
+export const CalcAvatar = styled.div`
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: #2a2a2a;
+  border: 1px solid #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+`
+
+export const CalcGreeting = styled.div`
+  font-size: 14px;
+  color: #ccc;
+  line-height: 1.5;
+
+  strong {
+    color: #fff;
+  }
+`
+
 export const Calculator = styled.form`
   display: flex;
   flex-direction: column;
