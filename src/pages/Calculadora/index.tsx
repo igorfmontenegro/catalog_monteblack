@@ -1,7 +1,23 @@
 import { useState, ChangeEvent } from 'react'
 import { NumericFormat } from 'react-number-format'
 import { Input } from '../../components/Input'
-import { Calculator, TableContainer, Title } from './Calculadora.styles'
+import {
+  CalcHeader,
+  CalcAvatar,
+  CalcTitle,
+  CalcSub,
+  Calculator,
+  FieldLabel,
+  CheckRow,
+  ResultHero,
+  ResultLabel,
+  ResultValue,
+  InstallmentList,
+  InstallmentRow,
+  InstallmentTimes,
+  InstallmentEach,
+  InstallmentTotal
+} from './Calculadora.styles'
 import { Button } from '../../components/Button'
 
 function Calculadora() {
@@ -102,12 +118,16 @@ function Calculadora() {
     <>
       {!calculated ? (
         <>
-          <Title>
-            CALCULADORA <br />
-            <span> Simule aqui o seu pagamento</span>
-          </Title>
+          <CalcHeader>
+            <CalcAvatar>🧮</CalcAvatar>
+            <div>
+              <CalcTitle>Calculadora de taxas</CalcTitle>
+              <CalcSub>SIMULE SEU PARCELAMENTO</CalcSub>
+            </div>
+          </CalcHeader>
+
           <Calculator onSubmit={calculateTax}>
-            <p> Qual o valor total a ser dividido? </p>
+            <FieldLabel>Qual o valor total a ser dividido?</FieldLabel>
             <NumericFormat
               name="productvalue"
               thousandSeparator="."
@@ -118,16 +138,21 @@ function Calculadora() {
               customInput={Input}
               required={true}
             />
-            <Input
-              label="Haverá valor de entrada?"
-              type="checkbox"
-              name="entrybox"
-              checked={checkBoxValue}
-              onChange={handleCheckboxChange}
-            />
+
+            <CheckRow>
+              <input
+                type="checkbox"
+                name="entrybox"
+                id="entrybox"
+                checked={checkBoxValue}
+                onChange={handleCheckboxChange}
+              />
+              <label htmlFor="entrybox">Haverá valor de entrada?</label>
+            </CheckRow>
+
             {checkBoxValue && (
               <>
-                <p> Quanto? </p>
+                <FieldLabel>Quanto?</FieldLabel>
                 <NumericFormat
                   name="entryvalue"
                   thousandSeparator="."
@@ -140,37 +165,35 @@ function Calculadora() {
               </>
             )}
 
-            <Button action="CALCULAR" />
+            <Button action="Calcular" />
           </Calculator>
         </>
       ) : (
         <>
-          <Title>
-            RESULTADO <br />
-            <span> Valor simulado: R${valueSimulated}</span>
-          </Title>
-          <TableContainer>
-            <table>
-              <thead>
-                <tr>
-                  <th>X</th>
-                  <th>Valor Parcela</th>
-                  <th>Valor Total</th>
-                </tr>
-              </thead>
-              <tbody>
-                {tableData.map((item, index) => (
-                  <tr key={index}>
-                    <td>{item.fees}</td>
-                    <td>R$ {item.valueFees}</td>
-                    <td>R$ {item.valueTotal}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </TableContainer>
+          <CalcHeader>
+            <CalcAvatar>📊</CalcAvatar>
+            <div>
+              <CalcTitle>Resultado da simulação</CalcTitle>
+              <CalcSub>PARCELAMENTOS DISPONÍVEIS</CalcSub>
+            </div>
+          </CalcHeader>
 
-          <Button action="RETORNAR" onClick={newSimulated} />
+          <ResultHero>
+            <ResultLabel>Valor simulado</ResultLabel>
+            <ResultValue>R$ {valueSimulated.toFixed(2)}</ResultValue>
+          </ResultHero>
+
+          <InstallmentList>
+            {tableData.map((item, index) => (
+              <InstallmentRow key={index}>
+                <InstallmentTimes>{item.fees}x</InstallmentTimes>
+                <InstallmentEach>R$ {item.valueFees}</InstallmentEach>
+                <InstallmentTotal>R$ {item.valueTotal}</InstallmentTotal>
+              </InstallmentRow>
+            ))}
+          </InstallmentList>
+
+          <Button action="Nova simulação" onClick={newSimulated} />
         </>
       )}
     </>
