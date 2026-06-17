@@ -58,7 +58,7 @@ function Layout() {
         {isHome && (
           <>
             <HeroTitle>
-              Importados <span>lacrados</span>,<br />com garantia real
+              iPhones <span>Lacrados</span>,<br />com garantia real
             </HeroTitle>
 
             <HeroStats>
