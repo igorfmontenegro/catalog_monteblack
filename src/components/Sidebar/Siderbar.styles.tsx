@@ -13,9 +13,7 @@ export const Container = styled.div<ContainerProps>`
   right: 0px;
   width: 90%;
   max-width: 320px;
-  right: ${(props) => (props.sidebar ? '0' : '-100%')};
-  transition: right 0.3s ease;
-  z-index: 200;
+  animation: showSidebar 0.3s ease;
 
   > svg {
     position: fixed;
@@ -29,6 +27,17 @@ export const Container = styled.div<ContainerProps>`
 
     &:hover {
       color: #fff;
+    }
+  }
+
+  @keyframes showSidebar {
+    from {
+      opacity: 0;
+      transform: translateX(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
     }
   }
 `
