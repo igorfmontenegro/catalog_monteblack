@@ -72,6 +72,7 @@ export const HeroCard = styled.div`
   padding: 1.5rem;
   margin: 0 20px;
   box-sizing: border-box;
+  text-align: center;
 
   @media (min-width: 760px) {
     margin: 0 auto;
@@ -95,6 +96,7 @@ export const HeroTitle = styled.h1`
 
 export const HeroStats = styled.div`
   display: flex;
+  justify-content: center;
   gap: 20px;
   margin: 14px 0 18px;
   flex-wrap: wrap;
@@ -125,6 +127,7 @@ export const HeroDivider = styled.div`
 export const HeroRow = styled.div`
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 12px;
 `
 
