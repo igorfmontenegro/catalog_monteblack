@@ -1,39 +1,47 @@
 import styled from 'styled-components'
 
-export const CalcHeader = styled.div`
+export const Page = styled.div`
+  margin: 0 20px;
+  max-width: 1320px;
+
+  @media (min-width: 760px) {
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 20px;
+  }
+`
+
+export const CalcHero = styled.div`
+  background: #222;
+  border-radius: 16px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.5rem;
   display: flex;
   align-items: center;
   gap: 14px;
-  padding-bottom: 1.25rem;
-  margin-bottom: 0.5rem;
-  border-bottom: 1px solid #2a2a2a;
 `
 
 export const CalcAvatar = styled.div`
-  width: 52px;
-  height: 52px;
+  width: 46px;
+  height: 46px;
   border-radius: 50%;
-  background: #222;
-  border: 2px solid #333;
+  background: #2a2a2a;
+  border: 1px solid #333;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 24px;
+  font-size: 20px;
   flex-shrink: 0;
 `
 
-export const CalcTitle = styled.div`
-  font-size: 17px;
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: 3px;
-`
+export const CalcGreeting = styled.div`
+  font-size: 14px;
+  color: #ccc;
+  line-height: 1.5;
 
-export const CalcSub = styled.div`
-  font-size: 12px;
-  color: #cfa75e;
-  font-weight: 600;
-  letter-spacing: 0.03em;
+  strong {
+    color: #fff;
+  }
 `
 
 export const Calculator = styled.form`
@@ -115,15 +123,15 @@ export const InstallmentTimes = styled.div`
 
 export const InstallmentEach = styled.div`
   font-size: 13px;
-  color: #888;
+  font-weight: 600;
+  color: #cfa75e;
   flex: 1;
   text-align: center;
 `
 
 export const InstallmentTotal = styled.div`
   font-size: 13px;
-  font-weight: 600;
-  color: #cfa75e;
+  color: #888;
   text-align: right;
   min-width: 90px;
 `
