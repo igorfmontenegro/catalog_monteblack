@@ -65,6 +65,40 @@ export const ResultValue = styled.div`
   color: #fff;
 `
 
+export const InstallmentHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+  margin-bottom: 8px;
+`
+
+export const InstallmentHeaderTimes = styled.div`
+  font-size: 11px;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  min-width: 50px;
+`
+
+export const InstallmentHeaderEach = styled.div`
+  font-size: 11px;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  flex: 1;
+  text-align: center;
+`
+
+export const InstallmentHeaderTotal = styled.div`
+  font-size: 11px;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  text-align: right;
+  min-width: 90px;
+`
+
 export const InstallmentList = styled.div`
   display: flex;
   flex-direction: column;
