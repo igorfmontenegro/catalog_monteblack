@@ -3,6 +3,9 @@ import { NumericFormat } from 'react-number-format'
 import { Input } from '../../components/Input'
 import {
   Page,
+  CalcHero,
+  CalcAvatar,
+  CalcGreeting,
   Calculator,
   FieldLabel,
   CheckRow,
@@ -119,6 +122,13 @@ function Calculadora() {
     <>
       {!calculated ? (
         <Page>
+          <CalcHero>
+            <CalcAvatar>🧮</CalcAvatar>
+            <CalcGreeting>
+              Preencha os dados abaixo para simular o <strong>parcelamento</strong>.
+            </CalcGreeting>
+          </CalcHero>
+
           <Calculator onSubmit={calculateTax}>
             <FieldLabel>Qual o valor total a ser dividido?</FieldLabel>
             <NumericFormat
@@ -163,6 +173,13 @@ function Calculadora() {
         </Page>
       ) : (
         <Page>
+          <CalcHero>
+            <CalcAvatar>📊</CalcAvatar>
+            <CalcGreeting>
+              Aqui está sua <strong>simulação</strong> de parcelamento.
+            </CalcGreeting>
+          </CalcHero>
+
           <ResultHero>
             <ResultLabel>Valor simulado</ResultLabel>
             <ResultValue>R$ {valueSimulated.toFixed(2)}</ResultValue>
