@@ -67,7 +67,7 @@ export const Menu = styled.div`
 `
 
 export const HeroCard = styled.div`
-  background: #141414;
+  background: #222;
   border-radius: 16px;
   padding: 1.5rem;
   margin: 0 20px;
